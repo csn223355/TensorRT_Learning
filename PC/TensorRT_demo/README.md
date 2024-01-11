@@ -13,7 +13,23 @@
 
 ## demo介绍
 这个demo的主要演示了如何使用TensorRT构建engine并保存到文件中，以及如后反序列化engine文件，推理模型。
-定义了一个简单的`MLP`层，作为模型，用列向量`[2,4,8]`作为输入，最后输出一个2 * 1 的列向量。 
+定义了一个简单的`MLP`层，作为模型，用列向量`[2,4,8]`作为输入，最后输出一个2 * 1 的列向量。
+
+# 如可开始demo 
+- 进入 `TensorRT_demo` 目录
+```bash
+cd PC/TensorRT_demo
+```
+- 编译文件
+```bash
+cmake -S . -B build/
+cmake --build  build/
+```
+- 运行可执行文件
+```bash
+./build/build
+./build/runtime
+```
 
 
 

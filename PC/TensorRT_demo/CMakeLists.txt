@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # 设置CUDA架构 2060 75
-set(CMAKE_CUDA_ARCHITECTURES 75 CACHE STRING "CUDA architectures" FORCE)
+# set(CMAKE_CUDA_ARCHITECTURES 75 CACHE STRING "CUDA architectures" FORCE)
 # 项目信息
 project(trt_demo LANGUAGES CXX CUDA)
 
@@ -35,16 +35,16 @@ endif()
 
 # 添加可执行文件
 add_executable(build src/build.cu)
-
 # 头文件
 target_include_directories(build PRIVATE ${TensorRT_INCLUDE_DIR} ${CUDA_INCLUDE_DIRS})
 # 链接库
 target_link_libraries(build PRIVATE ${TensorRT_LIBRARIES})
+set_target_properties(build PROPERTIES CUDA_ARCHITECTURES "61;70;75")
 
 # 添加可执行文件
 add_executable(runtime src/runtime.cu)
-
 # 头文件
 target_include_directories(runtime PRIVATE ${TensorRT_INCLUDE_DIR} ${CDUA_INCLUDE_DIRS}) 
 # # 链接库
 target_link_libraries(runtime PRIVATE ${TensorRT_LIBRARIES})
+set_target_properties(runtime PROPERTIES CUDA_ARCHITECTURES "61;70;75")
