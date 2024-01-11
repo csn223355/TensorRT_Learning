@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# TensorRT engine
+*.engine
+
+# 忽略 build目录
+build/
+
+# 忽略 weights目录
+weights/
+
+#TODO
+/TODO           
+
