@@ -40,6 +40,9 @@ build/
 # 忽略 weights目录
 weights/
 
+# 忽略 .vscode目录
+.vscode/
+
 #TODO
 /TODO           
 
